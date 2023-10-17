@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contents %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card bg-transparent shadow-none">
+                    <div class="card-body">
+                        <h6 class="mb-0 text-uppercase">Contact Us</h6>
+                        <div class="my-3 border-top"></div>
+                        <div class="row row-cols-1 row-cols-lg-2 justify-content-center g-lg-5">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="row g-0">
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Beri pesan kepada kami, Kami senang membantu Anda </h5>
+                                                <form action="" method="post">
+                                                    {% csrf_token %}
+                                                	<div class="mb-3">
+										<label class="form-label">Nama:</label>
+										<input type="input" class="form-control" placeholder="example@gmail.com">
+									</div>
+                                                	<div class="mb-3">
+										<label class="form-label">Email:</label>
+										<input type="email" class="form-control" placeholder="example@gmail.com">
+									</div>
+                                                	<div class="mb-3">
+                                        <div class="col-12">
+                                            <label class="form-label">Message</label>
+                                            <textarea class="form-control" rows="4" cols="4"></textarea>
+                                        </div>
+									</div>
+<div class="col">
+    <button type="button" class="btn btn-primary px-3">Kirim</button>
+</div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src=" {% static 'assets/images/alamat.png' %} " alt="..." class="card-img">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Kunjungi kami di link dibawah ini: </h5>
+                      
+                    	<div class="col">
+						<div class="d-flex align-items-center theme-icons shadow-sm p-2 cursor-pointer rounded">
+							<div class="font-22">	<i class="lni lni-map-marker"></i>
+							</div>
+							<div class="ms-2">	<span>Jalan Medan Siantar Lubuk Pakam </span>
+							</div>
+						</div>
+					</div>
+                    <div class="col">
+                        <div class="d-flex align-items-center theme-icons shadow-sm p-2 cursor-pointer rounded">
+                            <div class="font-22"> <i class="lni lni-whatsapp"></i>
+                            </div>
+                            <div class="ms-2">
+                               <a href="#">
+                                 <span>whatsapp</span>
+                               </a> 
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col">
+                            <div class="d-flex align-items-center theme-icons shadow-sm p-2 cursor-pointer rounded">
+                                <div class="font-22"> <i class="lni lni-instagram"></i>
+                                </div>
+                                <div class="ms-2"> 
+                                   <a href="https://instagram.com">
+                                    <span>instagram</span>
+                                   </a> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+						<div class="d-flex align-items-center theme-icons shadow-sm p-2 cursor-pointer rounded">
+							<div class="font-22">	<i class="lni lni-facebook"></i>
+							</div>
+							<div class="ms-2">
+                                <a href="https://facebook.com">
+                                	<span>facebook</span>
+                                </a>
+							</div>
+						</div>
+                        
+					</div>
+                 
+                                            </div>
+                                       
+                                        </div>
+                                    </div>
+                                           <iframe
+                        src="https://www.google.com/maps/embed?pb=!4v1697535603280!6m8!1m7!1sXmDcjpVpwn9KK1_BddxeTA!2m2!1d3.55436723905789!2d98.87649424990444!3f1.84!4f-1.25!5f0.5970117501821992"
+                        width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div><!--end row-->
+
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+{% endblock contents %}
