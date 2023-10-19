@@ -3,22 +3,28 @@ from django.contrib.auth import authenticate,login, logout
 
 # Create your views here.
 
+
+
 def member(request):
     context ={
         'title':'Member'
     }
     return render(request,'member/member.html',context)
 
+def dashboard(request):
+    context ={
+        'title':'Dashboard'
+    }
+    return render(request,'member/dashboard.html',context)
+
 def login_member(request):
     if request.method == "POST":
         user_login = request.POST['username']
         pass_login = request.POST['password']
-        print(user_login)
-        print(pass_login)
-        
         user = authenticate(request, username=user_login, password=pass_login)
         if user is not None:
             login(request, user)
+            return redirect('dashboard')
         else:
             return redirect('member')
     context ={
