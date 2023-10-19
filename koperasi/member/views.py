@@ -33,6 +33,13 @@ def login_member(request):
     return render(request,'member/login.html',context)
 
 
+def logout_member(request):
+    if request.method == "POST":
+        logout(request)
+        return render(request,'member/member.html')
+        
+
+
 def register_member(request):
     context = {
         'title':'Register Member'
