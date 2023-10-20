@@ -34,9 +34,8 @@ def login_member(request):
 
 
 def logout_member(request):
-    if request.method == "POST":
         logout(request)
-        return render(request,'member/member.html')
+        return redirect('member')
         
 
 
