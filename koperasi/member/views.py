@@ -35,7 +35,7 @@ def login_member(request):
 
 def logout_member(request):
         logout(request)
-        return redirect('member')
+        return redirect('beranda')
         
 
 
