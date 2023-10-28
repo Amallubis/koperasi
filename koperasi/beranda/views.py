@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.contrib import messages
+from beranda.models import Contact
 
 # Create your views here.
 
@@ -15,7 +17,17 @@ def about(request):
     return render(request,'beranda/about.html',context)
 
 def contact(request):
-    context ={
+    if request.method == "POST":
+        nama = request.POST.get('nama')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        if nama == "" or email == "" or  message == "":
+            messages.success(request,'Form tidak boleh kosong')
+            contact = Contact(nama=nama, email=email, message=message)
+            contact.save()
+            return render(request,'beranda/contact.html')
+        
+        context ={
         'title':'Contact'
-    }
-    return render(request,'beranda/contact.html',context)
+        }
+        return render(request,'beranda/contact.html',context)
